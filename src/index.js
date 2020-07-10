@@ -2,19 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import Header from "./components/common/header";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./store/reducers";
-import Home from "./components/home";
+import App from "./App";
 import thunk from "redux-thunk";
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <Header />
-    <Home />
+    <App />
   </Provider>,
   document.getElementById("root")
 );
