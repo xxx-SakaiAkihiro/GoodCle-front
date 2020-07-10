@@ -15,7 +15,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 const styles = {
   root: {
     background:
-      "linear-gradient(89.93474287615243deg, rgba(127, 127, 130,1) 12.96484375%,rgba(126, 126, 129,1) 12.96484375%,rgba(48, 48, 59,1) 81.55859375%)",
+      " linear-gradient(90deg, rgba(3,3,53,1) 0%, rgba(57,109,154,1) 100%)",
     height: 60,
   },
   title: {
