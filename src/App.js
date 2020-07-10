@@ -4,7 +4,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import Header from "./components/common/header";
+// import Header from "./components/common/header";
+import Header from "./components/common/header2";
 import Login from "./components/login";
 import Home from "./components/home";
 

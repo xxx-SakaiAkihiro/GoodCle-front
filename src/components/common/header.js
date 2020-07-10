@@ -4,6 +4,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import SearchIcon from "@material-ui/icons/Search";
+import MoodIcon from "@material-ui/icons/Mood";
 
 // import IconButton from "@material-ui/core/IconButton";
 // import MenuIcon from "@material-ui/icons/Menu";
@@ -20,6 +22,11 @@ const styles = {
   },
   title: {
     fontSize: 35,
+    flexGrow: 1,
+  },
+  icon: {
+    fontSize:"xx-large",
+    margin: "0px 15px",
   },
 };
 
@@ -36,7 +43,6 @@ class Header extends Component {
 
   render() {
     const { classes } = this.props;
-    const Spacer = require("react-spacer");
 
     // const sideList = (
     //   <div className={classes.list}>
@@ -77,8 +83,9 @@ class Header extends Component {
               </div>
             </Drawer> */}
             <strong className={classes.title}>GoodCle</strong>
-            <Spacer grow="1" />
-            <NotificationsIcon />
+            <NotificationsIcon style={styles.icon} />
+            <MoodIcon style={styles.icon} />
+            <SearchIcon style={styles.icon} />
           </Toolbar>
         </AppBar>
       </React.Fragment>
