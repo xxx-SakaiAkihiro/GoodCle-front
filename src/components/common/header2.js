@@ -133,7 +133,6 @@ export default function MenuAppBar() {
               <ListItemText primary="大澤" />
             </ListItem>
             <hr />
-
             <ListItem button onClick={handleClick} className={classes.list}>
               <ListItemIcon>
                 <MovieIcon />
@@ -148,7 +147,10 @@ export default function MenuAppBar() {
               unmountOnExit
               onClick={handleClose}
             >
-              <Link to="/FavoriteMovieList">
+              <Link
+                style={{ textDecoration: "none", color: "black" }}
+                to="/FavoriteMovieList"
+              >
                 <List component="div" disablePadding>
                   <ListItem button className={classes.nested}>
                     <StyledMenuItem>
@@ -167,7 +169,7 @@ export default function MenuAppBar() {
               unmountOnExit
               onClick={handleClose}
             >
-              <Link to="/">
+              <Link style={{ textDecoration: "none", color: "black" }} to="/">
                 <List component="div" disablePadding>
                   <ListItem button className={classes.nested}>
                     <StyledMenuItem>
@@ -181,7 +183,7 @@ export default function MenuAppBar() {
               </Link>
             </Collapse>
             <hr />
-            <Link to="/">
+            <Link style={{ textDecoration: "none", color: "black" }} to="/">
               <StyledMenuItem onClick={handleClose}>
                 <ListItemIcon>
                   <ExitToAppIcon />
