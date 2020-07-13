@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 240,
   },
   icon: {
-    fontSize:"xx-large",
+    fontSize: "xx-large",
     margin: "0px 15px",
   },
 }));
@@ -108,7 +108,7 @@ export default function MenuAppBar() {
             GoodCle
           </Typography>
           <div>
-            <NotificationsIcon className={classes.icon}/>
+            <NotificationsIcon className={classes.icon} />
           </div>
           <IconButton
             aria-label="account of current user"
@@ -117,7 +117,7 @@ export default function MenuAppBar() {
             onClick={handleMenu}
             color="inherit"
           >
-            <AccountCircle className={classes.icon}/>
+            <AccountCircle className={classes.icon} />
           </IconButton>
 
           <StyledMenu
@@ -142,33 +142,43 @@ export default function MenuAppBar() {
 
               {listopen ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
-            <Collapse in={listopen} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                <ListItem button className={classes.nested}>
-                  <Link to="/">
-                    <StyledMenuItem onClick={handleClose}>
+            <Collapse
+              in={listopen}
+              timeout="auto"
+              unmountOnExit
+              onClick={handleClose}
+            >
+              <Link to="/FavoriteMovieList">
+                <List component="div" disablePadding>
+                  <ListItem button className={classes.nested}>
+                    <StyledMenuItem>
                       <ListItemIcon>
                         <StarBorderIcon />
                       </ListItemIcon>
                       <ListItemText primary="お気に入り" />
                     </StyledMenuItem>
-                  </Link>
-                </ListItem>
-              </List>
+                  </ListItem>
+                </List>
+              </Link>
             </Collapse>
-            <Collapse in={listopen} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                <ListItem button className={classes.nested}>
-                  <Link to="/">
-                    <StyledMenuItem onClick={handleClose}>
+            <Collapse
+              in={listopen}
+              timeout="auto"
+              unmountOnExit
+              onClick={handleClose}
+            >
+              <Link to="/">
+                <List component="div" disablePadding>
+                  <ListItem button className={classes.nested}>
+                    <StyledMenuItem>
                       <ListItemIcon>
                         <CardGiftcardIcon />
                       </ListItemIcon>
                       <ListItemText primary="紹介一覧" />
                     </StyledMenuItem>
-                  </Link>
-                </ListItem>
-              </List>
+                  </ListItem>
+                </List>
+              </Link>
             </Collapse>
             <hr />
             <Link to="/">
@@ -181,7 +191,7 @@ export default function MenuAppBar() {
             </Link>
           </StyledMenu>
           <div>
-            <SearchIcon className={classes.icon}/>
+            <SearchIcon className={classes.icon} />
           </div>
         </Toolbar>
       </AppBar>
