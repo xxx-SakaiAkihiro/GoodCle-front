@@ -10,6 +10,8 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import _ from "lodash";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Col } from "reactstrap";
 
 const styles = {
   title: {
@@ -18,10 +20,10 @@ const styles = {
     border: 0,
     borderRadius: 3,
     color: "white",
-    height: 28,
+    height: 40,
     margin: "20px 20px 20px 20px",
     padding: "10px 10px ",
-    width: 100,
+    width: 120,
     fontSize: 22,
   },
   grit: {
@@ -36,14 +38,6 @@ const styles = {
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: "translateZ(0)",
   },
-  gritTitle: {
-    color: "white",
-    flexWrap: "wrap",
-  },
-  titleBar: {
-    background:
-      "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
-  },
 };
 
 class Home extends Component {
@@ -52,18 +46,11 @@ class Home extends Component {
   }
 
   renderTMDbApi() {
-    const { classes } = this.props;
-    const url = "https://image.tmdb.org/t/p/w300_and_h450_bestv2";
+    const url = "https://image.tmdb.org/t/p/w154";
     return _.map(this.props.TMDbApi, (TMDbApi) => (
-      <GridListTile key={TMDbApi.id}>
+      <GridListTile key={TMDbApi.id} rows={TMDbApi.rows || 1.5}>
         <img src={url + TMDbApi.poster_path} alt={TMDbApi.title} />
-        <GridListTileBar
-          title={TMDbApi.title}
-          classes={{
-            grit: classes.titleBar,
-            gritTitle: classes.gritTitle,
-          }}
-        />
+        <GridListTileBar title={TMDbApi.title} />
       </GridListTile>
     ));
   }
@@ -73,13 +60,15 @@ class Home extends Component {
     const { classes } = this.props;
     return (
       <React.Fragment>
-        <Grid item xs={2}>
+        <Grid>
           <Paper className={classes.title}>人気映画</Paper>
         </Grid>
         <Grid className={classes.grit}>
-          <GridList className={classes.gridList} cols={4.5}>
-            {this.renderTMDbApi()}
-          </GridList>
+          <Col xs={11}>
+            <GridList className={classes.gridList} cols="auto">
+              {this.renderTMDbApi()}
+            </GridList>
+          </Col>
         </Grid>
       </React.Fragment>
     );
