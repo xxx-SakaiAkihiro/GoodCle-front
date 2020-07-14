@@ -15,9 +15,10 @@ import Container from "@material-ui/core/Container";
 import StarIcon from "@material-ui/icons/Star";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import Tooltip from "@material-ui/core/Tooltip";
-import Moment from "moment";
 
-const styles = (theme) => ({
+import Moment from 'moment';
+
+const styles = {
   title: {
     background:
       "radial-gradient(circle, rgba(3,3,53,1) 0%, rgba(57,109,154,1) 100%)",
@@ -27,7 +28,7 @@ const styles = (theme) => ({
     height: 50,
     margin: "20px 20px 20px 20px",
     padding: "10px 10px ",
-    width: 180,
+    width: 110,
     fontSize: 22,
   },
   root: {
@@ -38,11 +39,11 @@ const styles = (theme) => ({
     maxWidth: 180,
     margin: "10px 10px 0px 10px",
   },
-  movieTitle: {
-    margin: "0px 0px 5px",
-    fontWeight: "bold",
-  },
-});
+  movieTitle:{
+    margin:"0px 0px 5px",
+    fontWeight:"bold"
+  }
+};
 
 class FavoriteMovieList extends Component {
   componentDidMount() {
@@ -66,11 +67,9 @@ class FavoriteMovieList extends Component {
           className={classes.media}
         />
         <CardContent>
-          <Typography className={classes.movieTitle}>
-            {TMDbApi.title}
-          </Typography>
+          <Typography className={classes.movieTitle}>{TMDbApi.title}</Typography>
           <Typography variant="body2" color="textSecondary">
-            {Moment(TMDbApi.release_date).format("YYYY年MM月DD日")}
+            {Moment(TMDbApi.release_date).format('YYYY年MM月DD日')}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -94,7 +93,7 @@ class FavoriteMovieList extends Component {
     return (
       <React.Fragment>
         <Card>
-          <Paper className={classes.title}>お気に入り映画</Paper>
+          <Paper className={classes.title}>紹介映画</Paper>
         </Card>
         <Card>
           <Container>

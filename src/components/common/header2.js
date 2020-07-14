@@ -116,6 +116,7 @@ export default function MenuAppBar() {
             aria-haspopup="true"
             onClick={handleMenu}
             color="inherit"
+            style={{ outline: "none" }}
           >
             <AccountCircle className={classes.icon} />
           </IconButton>
@@ -169,7 +170,7 @@ export default function MenuAppBar() {
               unmountOnExit
               onClick={handleClose}
             >
-              <Link style={{ textDecoration: "none", color: "black" }} to="/">
+              <Link style={{ textDecoration: "none", color: "black" }} to="/IntroductionMovieList">
                 <List component="div" disablePadding>
                   <ListItem button className={classes.nested}>
                     <StyledMenuItem>

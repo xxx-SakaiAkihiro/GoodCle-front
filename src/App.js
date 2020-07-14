@@ -9,6 +9,7 @@ import Header from "./components/common/Header2";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import FavoriteMovieList from "./components/FavoriteMovieList";
+import IntroductionMovieList from "./components/IntroductionMovieList";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/FavoriteMovieList" component={FavoriteMovieList} />
+          <Route exact path="/IntroductionMovieList" component={IntroductionMovieList} />
         </div>
       </Router>
     </div>
