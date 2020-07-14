@@ -108,7 +108,13 @@ export default function MenuAppBar() {
             GoodCle
           </Typography>
           <div>
-            <NotificationsIcon className={classes.icon} />
+            <IconButton
+              // onClick={handleMenu}
+              color="inherit"
+              style={{ outline: "none" }}
+            >
+              <NotificationsIcon className={classes.icon} />
+            </IconButton>
           </div>
           <IconButton
             aria-label="account of current user"
@@ -170,7 +176,10 @@ export default function MenuAppBar() {
               unmountOnExit
               onClick={handleClose}
             >
-              <Link style={{ textDecoration: "none", color: "black" }} to="/IntroductionMovieList">
+              <Link
+                style={{ textDecoration: "none", color: "black" }}
+                to="/IntroductionMovieList"
+              >
                 <List component="div" disablePadding>
                   <ListItem button className={classes.nested}>
                     <StyledMenuItem>
@@ -194,7 +203,13 @@ export default function MenuAppBar() {
             </Link>
           </StyledMenu>
           <div>
-            <SearchIcon className={classes.icon} />
+            <IconButton
+              // onClick={handleMenu}
+              color="inherit"
+              style={{ outline: "none" }}
+            >
+              <SearchIcon className={classes.icon} />
+            </IconButton>
           </div>
         </Toolbar>
       </AppBar>

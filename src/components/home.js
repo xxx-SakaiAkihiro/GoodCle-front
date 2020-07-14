@@ -20,10 +20,10 @@ const styles = {
     border: 0,
     borderRadius: 3,
     color: "white",
-    height: 40,
+    height: 50,
     margin: "20px 20px 20px 20px",
     padding: "10px 10px ",
-    width: 120,
+    width: 110,
     fontSize: 22,
   },
   grit: {
@@ -37,6 +37,9 @@ const styles = {
     flexWrap: "nowrap",
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: "translateZ(0)",
+  },
+  EntireGrit: {
+    margin: "30px 0px",
   },
 };
 
@@ -60,15 +63,41 @@ class Home extends Component {
     const { classes } = this.props;
     return (
       <React.Fragment>
-        <Grid>
+        <Grid className={classes.EntireGrit}>
           <Paper className={classes.title}>人気映画</Paper>
+          <Grid className={classes.grit}>
+            <Col xs={11}>
+              <GridList className={classes.gridList} cols="auto">
+                {this.renderTMDbApi()}
+              </GridList>
+            </Col>
+          </Grid>
         </Grid>
-        <Grid className={classes.grit}>
-          <Col xs={11}>
-            <GridList className={classes.gridList} cols="auto">
-              {this.renderTMDbApi()}
-            </GridList>
-          </Col>
+        <hr />
+        <Grid className={classes.EntireGrit}>
+          <Paper className={classes.title} style={{ width: 160 }}>
+            おすすめ映画
+          </Paper>
+          <Grid className={classes.grit}>
+            <Col xs={11}>
+              <GridList className={classes.gridList} cols="auto">
+                {this.renderTMDbApi()}
+              </GridList>
+            </Col>
+          </Grid>
+        </Grid>
+        <hr />
+        <Grid className={classes.EntireGrit}>
+          <Paper className={classes.title} style={{ width: 200 }}>
+            あなたに紹介映画
+          </Paper>
+          <Grid className={classes.grit}>
+            <Col xs={11}>
+              <GridList className={classes.gridList} cols="auto">
+                {this.renderTMDbApi()}
+              </GridList>
+            </Col>
+          </Grid>
         </Grid>
       </React.Fragment>
     );
