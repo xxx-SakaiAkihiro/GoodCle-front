@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 // import Header from "./components/common/header";
-import Header from "./components/common/Header2";
+import Header from "./components/common/Header";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import FavoriteMovieList from "./components/FavoriteMovieList";
