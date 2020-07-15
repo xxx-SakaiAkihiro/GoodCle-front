@@ -23,6 +23,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Collapse from "@material-ui/core/Collapse";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
+import Search from "./Search";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -84,7 +85,9 @@ const StyledMenuItem = withStyles((theme) => ({
 export default function MenuAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorElSearch, setAnchorElSerarch] = React.useState(null);
   const open = Boolean(anchorEl);
+  const openSerch = Boolean(anchorElSearch);
 
   const [listopen, setOpen] = React.useState(true);
 
@@ -98,6 +101,14 @@ export default function MenuAppBar() {
 
   const handleClick = () => {
     setOpen(!listopen);
+  };
+
+  const handleSearch = (event) => {
+    setAnchorElSerarch(event.currentTarget);
+  };
+
+  const closeSearch = () => {
+    setAnchorElSerarch(null);
   };
 
   return (
@@ -204,7 +215,7 @@ export default function MenuAppBar() {
           </StyledMenu>
           <div>
             <IconButton
-              // onClick={handleMenu}
+              onClick={handleSearch}
               color="inherit"
               style={{ outline: "none" }}
             >
@@ -212,6 +223,14 @@ export default function MenuAppBar() {
             </IconButton>
           </div>
         </Toolbar>
+        <StyledMenu
+          anchorEl={anchorElSearch}
+          keepMounted
+          open={openSerch}
+          onClose={closeSearch}
+        >
+          <Search />
+        </StyledMenu>
       </AppBar>
     </div>
   );
