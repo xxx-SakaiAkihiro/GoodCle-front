@@ -22,7 +22,7 @@ export default function FormPropsTextFields() {
   const classes = useStyles();
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <form className={classes.root} noValidate autoComplete="on">
       <div className={classes.textField}>
         <SearchIcon className={classes.icon} />
         <TextField
