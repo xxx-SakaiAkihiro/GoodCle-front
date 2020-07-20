@@ -12,6 +12,7 @@ import GridListTileBar from "@material-ui/core/GridListTileBar";
 import _ from "lodash";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const styles = {
   title: {
@@ -52,7 +53,9 @@ class Home extends Component {
     const url = "https://image.tmdb.org/t/p/w154";
     return _.map(this.props.TMDbApi, (TMDbApi) => (
       <GridListTile key={TMDbApi.id} rows={TMDbApi.rows || 1.5}>
-        <img src={url + TMDbApi.poster_path} alt={TMDbApi.title} />
+        <Link to={`/MovieDetail/${TMDbApi.id}`}>
+          <img src={url + TMDbApi.poster_path} alt={TMDbApi.title} />
+        </Link>
         <GridListTileBar title={TMDbApi.title} />
       </GridListTile>
     ));
