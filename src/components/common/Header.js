@@ -116,7 +116,9 @@ export default function MenuAppBar() {
       <AppBar position="static" className={classes.root}>
         <Toolbar>
           <Typography variant="h4" className={classes.title}>
-            GoodCle
+            <Link style={{ textDecoration: "none", color: "white" }} to="/home">
+              GoodCle
+            </Link>
           </Typography>
           <div>
             <IconButton
