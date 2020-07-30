@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
 import Header from "./components/common/Header";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import FavoriteMovieList from "./components/FavoriteMovieList";
 import IntroductionMovieList from "./components/IntroductionMovieList";
 import MovieDetail from "./components/MovieDetail";
+import IntroductionMovie from "./components/IntroductionMovie";
 
 function App() {
   return (
@@ -27,6 +27,11 @@ function App() {
             component={IntroductionMovieList}
           />
           <Route exact path="/MovieDetail/:id" component={MovieDetail} />
+          <Route
+            exact
+            path="/IntroductionMovie/:id"
+            component={IntroductionMovie}
+          />
         </div>
       </Router>
     </div>

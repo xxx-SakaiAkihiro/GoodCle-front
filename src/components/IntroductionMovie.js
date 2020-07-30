@@ -10,11 +10,8 @@ import Container from "@material-ui/core/Container";
 import { compose } from "redux";
 import Moment from "moment";
 import _ from "lodash";
-import StarIcon from "@material-ui/icons/Star";
-import BookmarkIcon from "@material-ui/icons/Bookmark";
-import Tooltip from "@material-ui/core/Tooltip";
-import CardActions from "@material-ui/core/CardActions";
-import IconButton from "@material-ui/core/IconButton";
+
+import Button from "@material-ui/core/Button";
 
 const styles = (theme) => ({
   root: {
@@ -34,6 +31,14 @@ const styles = (theme) => ({
   comments: {
     width: 850,
     height: 200,
+  },
+  button:{
+    margin: 0,
+    top: 'auto',
+    right: 200,
+    // bottom: 200,
+    left: 'auto',
+    position: 'fixed',
   },
 });
 
@@ -86,28 +91,14 @@ class MovieDetail extends Component {
               {Moment(this.props.TMDbApi.release_date).format("YYYY年MM月DD日")}
               ・{this.renderRuntime()}・{this.renderCategory()}
             </Typography>
-            <CardActions disableSpacing align="center">
-              <Tooltip title="お気に入り">
-                <IconButton style={{ outline: "none" }}>
-                  <StarIcon style={{ fontSize: 40, color: "#1E345D" }} />
-                </IconButton>
-              </Tooltip>
-              <Tooltip title="視聴済み">
-                <IconButton style={{ outline: "none" }}>
-                  <BookmarkIcon style={{ fontSize: 40, color: "#1E345D" }} />
-                </IconButton>
-              </Tooltip>
-            </CardActions>
-            <Typography
-              paragraph="true"
-              variant="subtitle1"
-              color="textSecondary"
-            >
-              {this.props.TMDbApi.tagline}
-            </Typography>
-            <h5>概要</h5>
+            <h5>紹介文</h5>
             <Typography className={classes.comments} variant="subtitle1">
-              {this.props.TMDbApi.overview}
+              ここ紹介文です
+            </Typography>
+            <Typography className={classes.button}>
+            <Button variant="contained" color="primary">
+              紹介
+            </Button>
             </Typography>
           </CardContent>
         </div>

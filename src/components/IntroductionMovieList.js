@@ -15,8 +15,8 @@ import Container from "@material-ui/core/Container";
 import StarIcon from "@material-ui/icons/Star";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import Tooltip from "@material-ui/core/Tooltip";
-
-import Moment from 'moment';
+import Moment from "moment";
+import { Link } from "react-router-dom";
 
 const styles = {
   title: {
@@ -39,10 +39,10 @@ const styles = {
     maxWidth: 180,
     margin: "10px 10px 0px 10px",
   },
-  movieTitle:{
-    margin:"0px 0px 5px",
-    fontWeight:"bold"
-  }
+  movieTitle: {
+    margin: "0px 0px 5px",
+    fontWeight: "bold",
+  },
 };
 
 class FavoriteMovieList extends Component {
@@ -61,15 +61,24 @@ class FavoriteMovieList extends Component {
           display: "inline-block",
         }}
       >
-        <img
-          src={url + TMDbApi.poster_path}
-          alt={TMDbApi.title}
-          className={classes.media}
-        />
+        <Link to={`/IntroductionMovie/${TMDbApi.id}`}>
+          <img
+            src={url + TMDbApi.poster_path}
+            alt={TMDbApi.title}
+            className={classes.media}
+          />
+        </Link>
         <CardContent>
-          <Typography className={classes.movieTitle}>{TMDbApi.title}</Typography>
+          <Link
+            to={`/IntroductionMovie/${TMDbApi.id}`}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <Typography className={classes.movieTitle}>
+              {TMDbApi.title}
+            </Typography>
+          </Link>
           <Typography variant="body2" color="textSecondary">
-            {Moment(TMDbApi.release_date).format('YYYY年MM月DD日')}
+            {Moment(TMDbApi.release_date).format("YYYY年MM月DD日")}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
