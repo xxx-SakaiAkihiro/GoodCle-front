@@ -61,7 +61,7 @@ class FavoriteMovieList extends Component {
           display: "inline-block",
         }}
       >
-        <Link to={`/IntroductionMovie/${TMDbApi.id}`}>
+        <Link to={`/IntroductionEdit/${TMDbApi.id}`}>
           <img
             src={url + TMDbApi.poster_path}
             alt={TMDbApi.title}
@@ -70,7 +70,7 @@ class FavoriteMovieList extends Component {
         </Link>
         <CardContent>
           <Link
-            to={`/IntroductionMovie/${TMDbApi.id}`}
+            to={`/IntroductionEdit/${TMDbApi.id}`}
             style={{ textDecoration: "none", color: "black" }}
           >
             <Typography className={classes.movieTitle}>

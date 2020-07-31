@@ -7,6 +7,7 @@ import FavoriteMovieList from "./components/FavoriteMovieList";
 import IntroductionMovieList from "./components/IntroductionMovieList";
 import MovieDetail from "./components/MovieDetail";
 import IntroductionMovie from "./components/IntroductionMovie";
+import IntroductionEdit from "./components/IntroductionEdit";
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
             exact
             path="/IntroductionMovie/:id"
             component={IntroductionMovie}
+          />
+          <Route
+            exact
+            path="/IntroductionEdit/:id"
+            component={IntroductionEdit}
           />
         </div>
       </Router>

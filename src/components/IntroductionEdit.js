@@ -123,7 +123,7 @@ class MovieDetail extends Component {
             </Typography>
             <Typography className={classes.button}>
               <Button variant="contained" color="primary">
-                紹介
+                更新
               </Button>
             </Typography>
           </CardContent>

@@ -61,6 +61,18 @@ class Home extends Component {
     ));
   }
 
+  renderIntroduction() {
+    const url = "https://image.tmdb.org/t/p/w154";
+    return _.map(this.props.TMDbApi, (TMDbApi) => (
+      <GridListTile key={TMDbApi.id} rows={TMDbApi.rows || 1.5}>
+        <Link to={`/IntroductionMovie/${TMDbApi.id}`}>
+          <img src={url + TMDbApi.poster_path} alt={TMDbApi.title} />
+        </Link>
+        <GridListTileBar title={TMDbApi.title} />
+      </GridListTile>
+    ));
+  }
+
   render() {
     // const props = this.props;
     const { classes } = this.props;
@@ -97,7 +109,7 @@ class Home extends Component {
           <Grid className={classes.grit}>
             <Col xs={11}>
               <GridList className={classes.gridList} cols="auto">
-                {this.renderTMDbApi()}
+                {this.renderIntroduction()}
               </GridList>
             </Col>
           </Grid>
