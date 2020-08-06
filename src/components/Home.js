@@ -55,8 +55,8 @@ class Home extends Component {
       <GridListTile key={TMDbApi.id} rows={TMDbApi.rows || 1.5}>
         <Link to={`/MovieDetail/${TMDbApi.id}`}>
           <img src={url + TMDbApi.poster_path} alt={TMDbApi.title} />
+          <GridListTileBar title={TMDbApi.title} />
         </Link>
-        <GridListTileBar title={TMDbApi.title} />
       </GridListTile>
     ));
   }

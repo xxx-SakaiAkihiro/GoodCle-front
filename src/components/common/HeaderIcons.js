@@ -22,6 +22,7 @@ import Collapse from "@material-ui/core/Collapse";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import Search from "./Search";
+import Badge from "@material-ui/core/Badge";
 
 const useStyles = makeStyles((theme) => ({
   outline: {
@@ -34,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     fontSize: "xx-large",
     margin: "0px 15px",
+  },
+  margin: {
+    margin: theme.spacing(1),
   },
 }));
 
@@ -106,7 +110,9 @@ export default function MenuAppBar() {
             color="inherit"
             style={{ outline: "none" }}
           >
-            <NotificationsIcon className={classes.icon} />
+            <Badge color="secondary" badgeContent={10} className={classes.margin}>
+              <NotificationsIcon className={classes.icon} />
+            </Badge>
           </IconButton>
         </div>
         <IconButton

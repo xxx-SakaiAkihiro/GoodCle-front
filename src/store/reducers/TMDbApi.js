@@ -7,6 +7,7 @@ export default (TMDbApi = {}, action) => {
     case GET_MOVIE_DETAIL:
       const data = action.response.data;
       return { ...TMDbApi, [data.id]: data };
+
     case READ_TMDbAPI:
       console.log(_.mapKeys(action.response.data.results, "id"));
       return _.mapKeys(action.response.data.results, "id");

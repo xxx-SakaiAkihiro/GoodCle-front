@@ -16,6 +16,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import CardActions from "@material-ui/core/CardActions";
 import IconButton from "@material-ui/core/IconButton";
 
+
 const styles = (theme) => ({
   root: {
     display: "flex",
@@ -114,6 +115,7 @@ class MovieDetail extends Component {
       </Card>
     );
   }
+
   render() {
     return (
       <React.Fragment>
