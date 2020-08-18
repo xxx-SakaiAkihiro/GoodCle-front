@@ -13,8 +13,8 @@ import _ from "lodash";
 import StarIcon from "@material-ui/icons/Star";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import Tooltip from "@material-ui/core/Tooltip";
-import CardActions from "@material-ui/core/CardActions";
 import IconButton from "@material-ui/core/IconButton";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 
 
 const styles = (theme) => ({
@@ -29,8 +29,9 @@ const styles = (theme) => ({
     flex: "1 0 auto",
   },
   cover: {
-    width: 300,
+    width: 400,
     height: 450,
+    margin: 10,
   },
   comments: {
     width: 850,
@@ -74,20 +75,15 @@ class MovieDetail extends Component {
         />
         <div className={classes.details}>
           <CardContent className={classes.content}>
-            <Typography
-              component="h4"
-              variant="h4"
-              align="center"
-              paragraph="true"
-            >
+            <Typography component="h4" variant="h4" paragraph="true">
               {this.props.TMDbApi.title}(
               {Moment(this.props.TMDbApi.release_date).format("YYYY")})
             </Typography>
-            <Typography paragraph="true" variant="subtitle2" align="center">
+            <Typography paragraph="true" variant="subtitle2">
               {Moment(this.props.TMDbApi.release_date).format("YYYY年MM月DD日")}
               ・{this.renderRuntime()}・{this.renderCategory()}
             </Typography>
-            <CardActions disableSpacing align="center">
+            <Typography>
               <Tooltip title="お気に入り">
                 <IconButton style={{ outline: "none" }}>
                   <StarIcon style={{ fontSize: 40, color: "#1E345D" }} />
@@ -98,7 +94,12 @@ class MovieDetail extends Component {
                   <BookmarkIcon style={{ fontSize: 40, color: "#1E345D" }} />
                 </IconButton>
               </Tooltip>
-            </CardActions>
+              <Tooltip title="紹介する">
+                <IconButton style={{ outline: "none" }}>
+                  <AddCircleIcon style={{ fontSize: 40, color: "#1E345D" }} />
+                </IconButton>
+              </Tooltip>
+            </Typography>
             <Typography
               paragraph="true"
               variant="subtitle1"
