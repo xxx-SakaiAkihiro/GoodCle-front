@@ -8,6 +8,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
+import { render } from "@testing-library/react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,11 +45,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 export default function SignInSide() {
   const classes = useStyles();
 
-  return (
-    <Grid container component="main" className={classes.root}>
+    return (
+      <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
@@ -67,7 +70,8 @@ export default function SignInSide() {
                 variant="contained"
                 color="linear-gradient(89.93474287615243deg, rgba(127, 127, 130,1) 12.96484375%,rgba(126, 126, 129,1) 12.96484375%,rgba(48, 48, 59,1) 81.55859375%)"
                 className={classes.submit}
-              >
+                // onClick={this.login}
+                >
                 Login
               </Button>
             </Link>
